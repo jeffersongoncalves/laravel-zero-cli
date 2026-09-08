@@ -1,0 +1,61 @@
+{
+    "name": "jeffersongoncalves/laravel-zero-cli",
+    "description": "Scaffold a new Laravel Zero CLI project with the whole release pipeline already wired: PHAR build, self-update, git-cliff changelog, CI and the shared laravel-zero-* conventions. Designed to be driven non-interactively (by an AI agent or a script) via arguments and flags.",
+    "keywords": ["laravel-zero", "cli", "scaffold", "phar", "generator", "devtools"],
+    "homepage": "https://github.com/jeffersongoncalves/laravel-zero-cli",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jefferson Gonçalves",
+            "email": "gerson.simao.92@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "jeffersongoncalves/laravel-zero-package-scaffold": "^1.0"
+    },
+    "require-dev": {
+        "jeffersongoncalves/laravel-zero-self-update": "^1.1",
+        "laravel-zero/framework": "^13.0",
+        "laravel/pint": "^1.25",
+        "mockery/mockery": "^1.6",
+        "pestphp/pest": "^3.8|^4.7",
+        "phpstan/phpstan": "^2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "build": "php laravel-zero-cli app:build laravel-zero-cli --build-version=\"$(git describe --tags --abbrev=0 2>/dev/null || echo unreleased)\"",
+        "lint": "./vendor/bin/pint",
+        "test:lint": "./vendor/bin/pint --test",
+        "test:unit": "./vendor/bin/pest --parallel",
+        "test:types": "./vendor/bin/phpstan analyse --memory-limit=256M",
+        "phpstan": "./vendor/bin/phpstan analyse --memory-limit=256M",
+        "phpstan-baseline": "./vendor/bin/phpstan analyse --generate-baseline --memory-limit=256M",
+        "test": [
+            "@test:unit",
+            "@test:lint"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "bin": ["builds/laravel-zero-cli"]
+}
