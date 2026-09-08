@@ -1,3 +1,5 @@
+![Laravel Zero CLI](banners/laravel-zero-cli.png)
+
 # Laravel Zero CLI
 
 Scaffold a new Laravel Zero CLI project with the whole release pipeline already
