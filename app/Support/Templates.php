@@ -529,12 +529,13 @@ class Templates
                 id: sha
                 run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
-              - name: Create tag and release at the release commit
+              - name: Create draft tag and release at the release commit
                 run: |
                   gh release create ${{ steps.v.outputs.tag }} \
                     --title "${{ steps.v.outputs.tag }}" \
                     --notes-file RELEASE_NOTES.md \
                     --target ${{ steps.sha.outputs.sha }} \
+                    --draft \
                     --latest
                 env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -543,6 +544,11 @@ class Templates
                 run: |
                   cp builds/{{binary}} {{binary}}.phar
                   gh release upload ${{ steps.v.outputs.tag }} {{binary}}.phar --clobber
+                env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+              - name: Publish the release
+                run: gh release edit ${{ steps.v.outputs.tag }} --draft=false
                 env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
