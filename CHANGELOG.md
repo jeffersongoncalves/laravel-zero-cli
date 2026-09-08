@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.2] - 2026-09-08
+
+### Bug Fixes
+
+- Prevent terminal text overflow in portfolio banner
+- **ci:** Publish release as draft until PHAR asset is attached
+
+### Build
+
+- **deps:** Bump orhun/git-cliff-action in the all-actions group
+
+### Documentation
+
+- Add portfolio banner
+
 ## [1.0.1] - 2026-09-08
 
 ### Bug Fixes
