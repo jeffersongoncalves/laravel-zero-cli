@@ -473,9 +473,12 @@ class Templates
                       | grep -E '^[0-9]+\.[0-9]+\.[0-9]+$' \
                       | sort -V \
                       | tail -n1)
-                    [ -z "$LATEST" ] && LATEST="0.0.0"
-                    IFS='.' read -r MA MI PA <<< "$LATEST"
-                    NEXT="${MA}.${MI}.$((PA + 1))"
+                    if [ -z "$LATEST" ]; then
+                      NEXT="1.0.0"
+                    else
+                      IFS='.' read -r MA MI PA <<< "$LATEST"
+                      NEXT="${MA}.${MI}.$((PA + 1))"
+                    fi
                   fi
                   while gh release view "v$NEXT" &>/dev/null; do
                     IFS='.' read -r MA MI PA <<< "$NEXT"
