@@ -123,7 +123,7 @@ class CreateCommand extends Command
         // Shared with the package generators via laravel-zero-package-scaffold.
         $write('.editorconfig', Scaffold::editorconfig());
         $write('.gitattributes', Scaffold::gitattributes());
-        $write('.gitignore', Scaffold::gitignore());
+        $write('.gitignore', Scaffold::gitignore(trackComposerLock: true));
         $write('LICENSE', Scaffold::license($author, date('Y')));
         $write('CHANGELOG.md', Scaffold::changelog());
         $write('README.md', Templates::render(Templates::readme(), $replacements));
