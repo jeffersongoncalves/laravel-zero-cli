@@ -2188,16 +2188,16 @@
         },
         {
             "name": "jeffersongoncalves/laravel-zero-package-scaffold",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeffersongoncalves/laravel-zero-package-scaffold.git",
-                "reference": "eb36caad8c0e3775d389bd807563bce988485a79"
+                "reference": "5afca194a467e710d91458ded462dd7d508db280"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeffersongoncalves/laravel-zero-package-scaffold/zipball/eb36caad8c0e3775d389bd807563bce988485a79",
-                "reference": "eb36caad8c0e3775d389bd807563bce988485a79",
+                "url": "https://api.github.com/repos/jeffersongoncalves/laravel-zero-package-scaffold/zipball/5afca194a467e710d91458ded462dd7d508db280",
+                "reference": "5afca194a467e710d91458ded462dd7d508db280",
                 "shasum": ""
             },
             "require": {
@@ -2235,7 +2235,7 @@
                 "scaffold"
             ],
             "support": {
-                "source": "https://github.com/jeffersongoncalves/laravel-zero-package-scaffold/tree/1.0.0"
+                "source": "https://github.com/jeffersongoncalves/laravel-zero-package-scaffold/tree/1.0.1"
             },
             "funding": [
                 {
@@ -2243,7 +2243,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-09-08T03:03:40+00:00"
+            "time": "2026-09-10T14:53:12+00:00"
         },
         {
             "name": "jeffersongoncalves/laravel-zero-self-update",
