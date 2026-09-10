@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.5] - 2026-09-10
+
+### Bug Fixes
+
+- Track composer.lock in scaffolded projects
+
 ## [1.0.4] - 2026-09-10
 
 ### Bug Fixes
