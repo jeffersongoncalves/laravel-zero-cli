@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2026-11-04
+
+### Bug Fixes
+
+- Pin PHP floor to 8.3 for Laravel Zero 13
+
+### Build
+
+- **deps:** Bump orhun/git-cliff-action in the all-actions group
+- **deps:** Bump shivammathur/setup-php (#8)
+- **deps:** Bump stefanzweifel/git-auto-commit-action (#11)
+- **deps-dev:** Bump the composer-deps group with 3 updates
+
+### CI/CD
+
+- Pass release version input through env
+- Standardize dependabot config
+- Standardize tests workflow
+- Remove run-tests.yml (replaced by tests.yml)
+- Standardize tests workflow
+- Auto-merge dependabot github-actions minor/patch
+
+### Other
+
+- Auto-assign issues and pull requests
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
 ## [1.0.5] - 2026-09-10
 
 ### Bug Fixes
